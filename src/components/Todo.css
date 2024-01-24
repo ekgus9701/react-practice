@@ -1,0 +1,85 @@
+.contentsContainer{
+    justify-content: center;
+    display:flex;
+    padding:5px;
+
+}
+
+.contents{
+    display:flex;
+    flex-direction: column;
+}
+
+.inputs{
+    margin:5px;
+}
+
+.delBtn{
+    margin-left:5px;
+}
+
+button{
+    background: black;
+    color:white;
+    border-radius: 3px;
+    border:none;
+    margin: 5px;
+}
+
+
+.lightGreen{
+    background-color: #B5C8BC;
+    border-radius: 20px;
+    color:transparent;
+
+}
+
+.green{
+    background-color: #778b86;
+    border-radius: 20px;
+    color:transparent;
+}
+
+.darkGreen{
+    background-color: #919497;
+    border-radius: 20px;
+    color:transparent;
+}
+
+.grey{
+    background-color:#C4C5C5;
+    border-radius: 20px;
+    color:transparent;
+}
+.lightGrey{
+    background-color:#E6E3E3;
+    border-radius: 20px;
+    color:transparent;
+}
+
+.lightGreen:focus{
+    border:1px solid;
+    border-color: red;
+    
+}
+
+.green:focus{
+    border:1px solid;
+    border-color: red;
+}
+
+.darkGreen:focus{
+    border:1px solid;
+    border-color: red;
+}
+
+.grey:focus{
+    border:1px solid;
+    border-color: red;
+}
+.lightGrey:focus{
+    border:1px solid;
+    border-color: red;
+}
+
+

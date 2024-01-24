@@ -7,15 +7,45 @@ import BlinkComponent from './components/BlinkComponent'
 import CountComponent from './components/CountComponent';
 import React from 'react';
 import FocusInputButton from './components/FocusInputButton';
-import TodoInput from './components/TodoInput';
+import TodoList from './components/TodoList';
+import PrimeCalculator from './components/calculatePrimes';
+import ThemeButton from './components/ThemeButton';
+import ThemeProvider from './components/ThemeProvider';
+import MyPage from './components/MyPage';
+import Posts from './components/Posts';
+import useFetchData from './components/Posts';
 
 function App() {
   const[visible,setVisible]=React.useState(true);
+
+  const requestConfig = {
+    url: 'https://jsonplaceholder.typicode.com/posts',
+  }
+  const { data = [], loading, error } = useFetchData(requestConfig)
+
   return (
 
     <div className="App">
+      
+      <Posts/>
+        
+          {/* <TodoList/> */}
+        
+      
 
-      <TodoInput/>
+      {/* <ThemeProvider>
+        <ThemeButton/>
+        <MyPage/>
+
+      </ThemeProvider> */}
+
+      {/* <div> 
+        <PrimeCalculator text={4}/>
+      </div> */}
+
+      {/* <h1>TodoList</h1>
+
+      <TodoList/> */}
       
 
       {/* <FocusInputButton/> */}
