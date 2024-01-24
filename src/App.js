@@ -27,9 +27,9 @@ function App() {
 
     <div className="App">
       
-      <Posts/>
-        
-          {/* <TodoList/> */}
+      {/* <Posts/> */}
+        <h1>What to do..</h1>
+          <TodoList/>
         
       
 

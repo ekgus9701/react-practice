@@ -24,7 +24,7 @@ const TodoList = () => {
 
   return (
     <div className='Everything'>
-      <input
+      <input style={{ backgroundColor: selectedColor }}
         className='inputs'
         value={userInput}
         onChange={(e) => setUserInput(e.target.value)}
