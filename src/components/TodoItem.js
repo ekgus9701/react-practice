@@ -1,31 +1,50 @@
-// TodoItem.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const TodoItem = ({ id, value, onDelete, onUpdate, color }) => {
-  const [editedValue, setEditedValue] = useState(value);
+export default function TodoItem({ todo, remove }) {
+  const [mode, setMode] = useState('normal');
+  const [inputText, setInputText] = useState('');
 
-  const handleInputChange = (e) => {
-    setEditedValue(e.target.value);
-  };
-
-  const handleSaveEdit = () => {
-    onUpdate(id, editedValue);
-  };
+  useEffect(() => {
+    setInputText(todo.title);
+  }, [todo]);
 
   return (
-    <div className={`contentsContainer`} style={{ backgroundColor: color }}>
-      <div className='contents'>
-        <div>
-          {value}
-          <button className={`delBtn`} onClick={() => onDelete(id) }>삭제</button>
-          <button className={`saveBtn`} onClick={handleSaveEdit}>저장</button>
-        </div>
-        <div>
-          <input value={editedValue} onChange={handleInputChange} />
-        </div>
+    <li style={{ backgroundColor: todo.color }}>
+      <div>
+        {mode === 'updates' ? (
+          <input
+            value={inputText}
+            type="text"
+            onChange={(e) => setInputText(e.target.value)}
+          />
+        ) : mode === 'normal' ? (
+          todo.title
+        ) : null}
       </div>
-    </div>
-  );
-};
 
-export default TodoItem;
+      <div
+        onClick={() => {
+          remove();
+        }}
+        style={{ cursor: 'pointer' }}
+      >
+        X
+      </div>
+
+      <div
+        onClick={() => {
+          if (mode === 'normal') {
+            setMode('updates');
+          } else {
+            // Call the parent component's update function
+            // with the new title
+            updateTodo(inputText);
+            setMode('normal');
+          }
+        }}
+      >
+        수정
+      </div>
+    </li>
+  );
+}

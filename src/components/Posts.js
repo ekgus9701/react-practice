@@ -1,22 +1,22 @@
-import React,{useState, useEffect} from 'react';
+// Posts.js
+import React from 'react';
 
-
-export default function Posts(){
-	const [data, setData] = useState([]);
-  	
-  	useEffect(() => {
-		const fetchData = async() => {
-          const res = await fetch('https://jsonplaceholder.typicode.com/news');
-          const result = res.json();
-          return result;
-        }	
-        
-        fetchData().then(res => setData(res));
-    }, []);
-  
+const Posts = ({ posts }) => {
   return (
     <div>
-     	{/* 코드 짜야함 */}
+      <h1>게시글 목록</h1>
+      <ul>
+        {posts&&posts.map(post => (
+          <div key={post.id}>
+            <strong>{post.title}</strong>
+            <p>{post.body}</p>
+          </div>
+        ))}
+      </ul>
     </div>
-    )
-}
+  );
+};
+
+export default Posts;
+
+

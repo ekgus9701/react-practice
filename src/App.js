@@ -7,13 +7,17 @@ import BlinkComponent from './components/BlinkComponent'
 import CountComponent from './components/CountComponent';
 import React from 'react';
 import FocusInputButton from './components/FocusInputButton';
-import TodoList from './components/TodoList';
+import TodoList from './components/DH_TodoList';
 import PrimeCalculator from './components/calculatePrimes';
 import ThemeButton from './components/ThemeButton';
 import ThemeProvider from './components/ThemeProvider';
 import MyPage from './components/MyPage';
 import Posts from './components/Posts';
 import useFetchData from './components/Posts';
+import PostsList from './components/PostsList';
+import TodoApp from './components/TodoApp'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   const[visible,setVisible]=React.useState(true);
@@ -26,10 +30,12 @@ function App() {
   return (
 
     <div className="App">
+
+      <PostsList/>
       
-      {/* <Posts/> */}
-        <h1>What to do..</h1>
-          <TodoList/>
+     
+        {/* <h1>What to do..</h1>
+          <TodoList/> */}
         
       
 
